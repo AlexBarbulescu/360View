@@ -1,0 +1,79 @@
+<title>360 View Cartoon Cars</title>
+<link href='style.css' rel='stylesheet' type='text/css'>
+<script src='js/jquery-1.9.1.min.js' type='text/javascript'></script>
+<script src='js/jquery.reel.js' type='text/javascript'></script>
+<center>
+
+    <img src="LamborghiniGallardo/turntable000.jpg" width="500" height="500" class="reel" id="image"
+	data-images="LamborghiniGallardo/turntable###.jpg|000..059"
+	data-speed="0.3"
+	data-cursor="auto"
+	data-preloader="0"
+	data-inversed="true">
+
+    <div class="reel-annotation" id="view360"
+	data-x="15"
+	data-y="450"
+	data-for="image">
+	<div id="singleButton">
+			<img src="360view.png">
+    </div>
+	</div>
+	
+	
+    <div class="reel-annotation" id="watermark"
+	data-x="360"
+	data-y="460"
+	data-for="image">
+		<img src="logo.png">
+    </div>
+	
+    <div id="carLogo">
+		<img src="lamborghini.png">
+    </div>
+	<script>
+
+var state = false;
+
+$('#singleButton').click(function(){
+    if(!state){
+        $('#image').reel('images', 'LamborghiniGallardo/turntable###.jpg|000..059');
+    }
+    else {
+        $('#image').reel('images', 'LamborghiniGallardoUV/turntable###.jpg|000..059');
+    }
+
+    state = !state;
+});
+
+//      $('#nonUV').click(function(){
+//       $('#image').reel('images', 'LamborghiniGallardo/turntable###.jpg|000..059');
+//      });
+//
+//     <button id="nonUV">nonUV</button>
+//     <button id="UV">UV</button>
+//      $('#UV').click(function(){
+//        $('#image').reel('images', 'LamborghiniGallardoUV/turntable###.jpg|000..059');
+//	});
+
+	  
+    </script>
+<!--
+	<img id="image" src="images/turntable000.png" width="500" height="500" />
+    <script>
+		$('#image').reel({
+			inversed:    true,
+			speed:       0.6,
+			cursor: 	'e-resize',
+			images:      'images/turntable###.png|000..029',
+			preloader:    0,
+			annotations: {
+				"green_marker": {
+					node: $('<img src="360view.png"><div/>'),
+					x: 15, y: 450,
+				}
+			}
+		});
+    </script>
+		-->
+</center>
