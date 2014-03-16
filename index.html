@@ -9,30 +9,62 @@
 	data-speed="0.3"
 	data-cursor="auto"
 	data-preloader="0"
+	data-draggable="true"
 	data-inversed="true">
-
+	
+    <div class="reel-annotation" id="polycount"
+	data-x="0"
+	data-y="0"
+	data-for="image">
+		<img src="polycountlamborghini.png">
+	</div>
+	
+    <div class="reel-annotation" id="polycountbutton"
+	data-x="15"
+	data-y="430"
+	data-draggable="false"
+	data-for="image"><a onclick="toggle_visibility('polycount');">
+		<img draggable="false" src="polycountbutton.png"></a>
+	</div>
+	
     <div class="reel-annotation" id="view360"
 	data-x="15"
 	data-y="450"
+	data-draggable="false"
 	data-for="image">
-	<div id="singleButton">
-			<img src="360view.png">
-    </div>
+		<div id="singleButton">
+			<img draggable="false" src="360view.png">
+		</div>
 	</div>
-	
-	
+
     <div class="reel-annotation" id="watermark"
 	data-x="360"
 	data-y="460"
+	data-draggable="false"
 	data-for="image">
 		<img src="logo.png">
     </div>
 	
     <div id="carLogo">
-		<img src="lamborghini.png">
+		<img draggable="false" src="lamborghini.png">
     </div>
-	<script>
+	
 
+	
+	
+	
+	<script>
+	
+	function toggle_visibility(id) {
+	var e = document.getElementById(id);
+	
+	if(e.style.visibility == 'hidden')
+		e.style.visibility = 'visible';
+	else
+		e.style.visibility = 'hidden';
+	}
+	
+	
 var state = false;
 
 $('#singleButton').click(function(){
@@ -46,34 +78,7 @@ $('#singleButton').click(function(){
     state = !state;
 });
 
-//      $('#nonUV').click(function(){
-//       $('#image').reel('images', 'LamborghiniGallardo/turntable###.jpg|000..059');
-//      });
-//
-//     <button id="nonUV">nonUV</button>
-//     <button id="UV">UV</button>
-//      $('#UV').click(function(){
-//        $('#image').reel('images', 'LamborghiniGallardoUV/turntable###.jpg|000..059');
-//	});
 
-	  
     </script>
-<!--
-	<img id="image" src="images/turntable000.png" width="500" height="500" />
-    <script>
-		$('#image').reel({
-			inversed:    true,
-			speed:       0.6,
-			cursor: 	'e-resize',
-			images:      'images/turntable###.png|000..029',
-			preloader:    0,
-			annotations: {
-				"green_marker": {
-					node: $('<img src="360view.png"><div/>'),
-					x: 15, y: 450,
-				}
-			}
-		});
-    </script>
-		-->
+
 </center>
